@@ -5,7 +5,6 @@
 <?php include __DIR__ . "/../../components/tareas_modal_edit.php"; ?>
 <?php include __DIR__ . "/../../components/tareas_modal_delete.php"; ?>
 <?php include __DIR__ . "/../../components/tareas_table.php"; ?>
-<?php include "../components/jenny_chat.php"; ?>
 
 <script src="/public/js/tareas_modal.js"></script>
 <script src="/public/js/tareas_modal_edit.js"></script>
