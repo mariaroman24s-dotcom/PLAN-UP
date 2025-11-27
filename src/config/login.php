@@ -1,9 +1,11 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once "conexion.php";
 
 $email = $_POST['correo'] ?? null;
-$password = $_POST['contraseña'] ?? null;
+$password = $_POST['contrasena'] ?? null;
 
 if(!$email || !$password){
     echo "faltan_datos";

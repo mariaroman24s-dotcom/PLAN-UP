@@ -1,0 +1,196 @@
+.tareas-panel-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Encabezado */
+
+.tareas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-gestor {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1C1F53;
+    margin-bottom: 20px;
+}
+
+/* Botón “Crear una nueva tarea” */
+
+.tareas-btn-new {
+    background-color: #1C1F53;
+    color: #ffffff;
+    padding: 8px 22px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.1s ease;
+    border-bottom: 20px;
+}
+
+.tareas-btn-new:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.tareas-btn-plus {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Secciones */
+
+.tareas-section {
+    margin-top: 20px;
+    padding-top: 4px;
+}
+
+.tareas-section + .tareas-section {
+    margin-top: 24px;
+}
+
+.tareas-section-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tareas-section-bullet {
+    font-size: 16px;
+}
+
+/* Colores de títulos */
+
+.tareas-section-title--pending {
+    color: #A133A8;  /* morado */
+}
+
+.tareas-section-bullet--pending {
+    color: #A133A8;
+}
+
+.tareas-section-title--process {
+    color: #EB3C80;  /* rosa */
+}
+
+.tareas-section-bullet--process {
+    color: #EB3C80;
+}
+
+.tareas-section-title--done {
+    color: #00A3A6;  /* turquesa */
+}
+
+.tareas-section-bullet--done {
+    color: #00A3A6;
+}
+
+/* Tabla */
+
+.tareas-row {
+    display: grid;
+    grid-template-columns: 1.5fr 2.2fr 0.8fr 0.8fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.tareas-row--head {
+    font-weight: 700;
+    color: #1C1F53;
+    border-bottom: 2px solid #D4D4D4;
+}
+
+.col {
+    padding-right: 12px;
+}
+
+.col-descripcion {
+    max-width: 420px;
+}
+
+/* Chips de prioridad */
+
+.chip-prioridad {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Colores según prioridad (puedes ajustar para que hagan match exacto con Figma) */
+.chip-prioridad--low {
+    background-color: #6B8ED2;   /* Baja */
+}
+
+.chip-prioridad--medium {
+    background-color: #8752D0;   /* Media */
+}
+
+.chip-prioridad--high {
+    background-color: #F3561F;   /* Alta (ojo que dabas F3561, lo completo a hex válido) */
+}
+
+/* Botones de acciones */
+
+.col-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-accion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-accion-editar {
+    background-color: #D4D4D4;
+    color: #636363;
+}
+
+.btn-accion-eliminar {
+    background-color: #B90707;
+    color: #FFFFFF;
+}
+
+.btn-accion:hover {
+    filter: brightness(1.05);
+}
+
+.tareas-section-title {
+    cursor: pointer;
+}
+
+.tareas-section-content {
+    transition: all 0.2s ease;
+}

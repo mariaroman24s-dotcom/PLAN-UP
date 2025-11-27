@@ -1,0 +1,107 @@
+/* CONTENEDOR GENERAL */
+.tareas-left-container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* TÍTULO */
+.titulo-general {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0C2C58;
+    margin-bottom: 18px;
+}
+
+/* Encabezado Mis tareas */
+.mis-tareas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.mis-tareas-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icono-titulo {
+    width: 22px;
+    height: 22px;
+}
+
+/* ---- BOTÓN MINI (NO SE TOCA TU TAILWIND, SOLO EL TAMAÑO) ---- */
+.btn-agregar-mini {
+    background-color: #0C2C58;
+    color: white;
+
+    width: 91px;
+    height: 29px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0px 4px 2px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-agregar-mini:hover {
+    filter: brightness(1.15);
+}
+
+.plus-mini {
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+/* Línea vertical */
+.linea-vertical {
+    width: 2px;
+    background-color: #1C1F53;
+    margin-left: 33px;
+    margin-top: 6px;
+    height: calc(100% - 120px);
+}
+
+/* LISTA DE TAREAS */
+.lista-tareas {
+    margin-top: 15px;
+}
+
+.tarea-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.tarea-icono {
+    width: 22px;
+    height: 22px;
+}
+
+.tarea-texto {
+    color: #1C1F53;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* MENSAJE SIN TAREAS */
+.no-tareas {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #6B6E83;
+    font-style: italic;
+}

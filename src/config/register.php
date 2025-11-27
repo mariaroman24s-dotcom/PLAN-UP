@@ -3,7 +3,7 @@ require_once "conexion.php";
 
 $nombre = $_POST['nombre'] ?? null;
 $email = $_POST['correo'] ?? null;
-$password = $_POST['contraseña'] ?? null;
+$password = $_POST['contrasena'] ?? null;
 $confirmar = $_POST['confirmar'] ?? null;  // ← nuevo
 
 if(!$nombre || !$email || !$password || !$confirmar){

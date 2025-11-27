@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Página actual (vista seleccionada)
 $page = $_GET["page"] ?? "eventos";
