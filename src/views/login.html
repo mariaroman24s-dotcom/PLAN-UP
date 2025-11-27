@@ -13,14 +13,14 @@
     <body>
         <div class="container">
             <div class="form-box login">
-                <form action="../config/login.php" method="POST">
+                <form action="../config/login.php" method="POST" autocomplete="off">
                     <h1 id="logintext">¡Bienvenido de nuevo!</h1>
                     <div class="input-box">
-                        <input type="email" name="correo" placeholder="Correo" required>
+                        <input type="email" name="correo" placeholder="Correo" autocomplete="off" required>
                         <i class='bx bx-envelope'></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="contraseña" placeholder="Contraseña" id="Contraseña">
+                        <input type="password" name="contraseña" placeholder="Contraseña" id="Contraseña" autocomplete="new-password" required>
                         <i class='bx bxs-lock-alt'></i>
                         <i class='bx bx-hide toggle-eye'></i> 
                     </div>
@@ -28,43 +28,31 @@
                         <a href="#">¿Olvidaste tu contraseña? Haz click aquí</a>
                     </div>
                     <button type="submit" class="btn">Iniciar sesión</button>
-                    <p>o continua con</p>
-                    <div class="social-icons">
-                        <a href="#"><i class='bx bxl-google'></i></a>
-                        <a href="#"><i class='bx bxl-facebook'></i></a>
-                    </div>
                 </form>
             </div>
 
             <div class="form-box register">
-                <form action="../config/register.php" method="POST">
+                <form action="../config/register.php" method="POST" autocomplete="off">
                     <h1>¡Crea una nueva cuenta!</h1>
                     <div class="input-box">
-                        <input type="text" name="nombre" placeholder="Nombre o apodo" required>
+                        <input type="text" name="nombre" placeholder="Nombre o apodo" required autocomplete="off">
                         <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <input type="email" name="correo" placeholder="Correo" required>
+                        <input type="email" name="correo" placeholder="Correo" autocomplete="off" required>
                         <i class='bx bx-envelope'></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="contraseña" placeholder="Contraseña"
-                        required>
+                        <input type="password" name="contraseña" placeholder="Contraseña" autocomplete="new-password" required>
                         <i class='bx bxs-lock-alt'></i>
                         <i class='bx bx-hide toggle-eye'></i>
                     </div>
                     <div class="input-box"> 
-                        <input type="password" name="confirmar" placeholder="Confirmar contraseña"
-                        required>
+                        <input type="password" name="confirmar" placeholder="Confirmar contraseña" autocomplete="new-password" required>
                         <i class='bx bxs-lock-alt'></i>
                         <i class='bx bx-hide toggle-eye'></i>
                     </div>
                     <button type="submit" class="btn">Crear cuenta</button>
-                    <p>o continua con</p>
-                    <div class="social-icons">
-                        <a href="#"><i class='bx bxl-google'></i></a>
-                        <a href="#"><i class='bx bxl-facebook'></i></a>
-                    </div>
                 </form>
             </div>
 
