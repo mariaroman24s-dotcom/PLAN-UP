@@ -3,8 +3,7 @@
 <?php include "../components/calendar_horizontal.php"; ?>
 <?php include "../components/event_new_button.php"; ?>
 <?php include "../components/events_table.php"; ?>
-
-<!-- MODAL EDITAR -->
 <?php include "../components/events_modal_edit.php"; ?>
+<?php include "../components/jenny_chat.php"; ?>
 
 <script src="/public/js/events_modal_edit.js"></script>

@@ -3,3 +3,4 @@
 <?php include "../components/calendar_horizontal.php"; ?>
 <?php include __DIR__ . "/../../components/tareas_table.php"; ?>
 <?php include "../components/events_table.php"; ?>
+<?php include "../components/jenny_chat.php"; ?>
