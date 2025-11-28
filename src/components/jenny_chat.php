@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/public/css/jenny_chat.css">
 <script src="/public/js/jenny_chat.js?v=2" defer></script>
+<script src="/public/js/jenny_demo_responses.js" defer></script>
 
 <!-- Botón flotante -->
 <button id="jenny-btn" class="jenny-floating-btn">

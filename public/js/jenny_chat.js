@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messages.scrollTop = messages.scrollHeight;
 
         try {
-            const respuesta = await fetch("https://plan-up.onrender.com/api/jenny/chat", {
+            const respuesta = await fetch("http://localhost:3000/api/jenny/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ mensaje: text })
@@ -51,11 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
             messages.scrollTop = messages.scrollHeight;
 
         } catch (error) {
+            // 🌟 SI LA API FALLA, USAR DEMO
             thinkingBubble.remove();
-            const errorBubble = document.createElement("div");
-            errorBubble.classList.add("bubble", "bot");
-            errorBubble.textContent = "Error conectando con Jenny 😢.";
-            messages.appendChild(errorBubble);
+
+            const botBubble = document.createElement("div");
+            botBubble.classList.add("bubble", "bot");
+
+            botBubble.textContent = jennyDemoResponse(text);
+
+            messages.appendChild(botBubble);
+            messages.scrollTop = messages.scrollHeight;
         }
     }
 

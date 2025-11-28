@@ -3,6 +3,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// ✅ VERIFICAR SI EL USUARIO ESTÁ LOGUEADO
+if (!isset($_SESSION['usuario'])) {
+    header("Location: /login.html");
+    exit();
+}
+
 // Página actual (vista seleccionada)
 $page = $_GET["page"] ?? "eventos";
 
@@ -34,6 +40,9 @@ switch ($page) {
         break;
 }
 
+// ✅ MOSTRAR INFORMACIÓN DEL USUARIO LOGUEADO
+$usuario = $_SESSION['usuario'];
+$iniciales = strtoupper(substr($usuario['nombre'], 0, 2));
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,9 +52,7 @@ switch ($page) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plan Up | Dashboard</title>
 
-    
-  <link rel="icon" type="image/png" href="/public/img/logoup.png">
-
+    <link rel="icon" type="image/png" href="/public/img/logoup.png">
     <link rel="stylesheet" href="/public/css/menu.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -67,7 +74,7 @@ switch ($page) {
             </button>
 
             <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold">
-                LC
+                <?= $iniciales ?>
             </div>
         </div>
     </header>
@@ -107,7 +114,7 @@ switch ($page) {
                 <div class="flex flex-col items-center gap-6">
                     
                     <div class="user-avatar w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold">
-                        LC
+                        <?= $iniciales ?>
                     </div>
                 </div>
 
