@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const send = document.getElementById("jenny-send");
     const messages = document.getElementById("jenny-messages");
 
+    // ✅ URL CORRECTA - llama a nuestro endpoint PHP seguro
+    const JENNY_API_URL = '/src/config/jenny_api.php';
+
     // Abrir / cerrar chat
     btn.addEventListener("click", () => {
         chat.style.display = chat.style.display === "flex" ? "none" : "flex";
@@ -33,13 +36,26 @@ document.addEventListener("DOMContentLoaded", () => {
         messages.scrollTop = messages.scrollHeight;
 
         try {
-            const respuesta = await fetch("http://localhost:3000/api/jenny/chat", {
+            console.log("📤 Enviando mensaje a Jenny:", text);
+            
+            const response = await fetch(JENNY_API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ mensaje: text })
             });
 
-            const data = await respuesta.json();
+            console.log("📥 Respuesta HTTP:", response.status);
+
+            if (!response.ok) {
+                throw new Error(`Error ${response.status}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            console.log("🤖 Datos recibidos:", data);
+
+            if (data.error) {
+                throw new Error(data.error);
+            }
 
             thinkingBubble.remove();
 
@@ -51,12 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
             messages.scrollTop = messages.scrollHeight;
 
         } catch (error) {
+            console.error("❌ Error conectando con Jenny:", error);
+            
             // 🌟 SI LA API FALLA, USAR DEMO
             thinkingBubble.remove();
 
             const botBubble = document.createElement("div");
             botBubble.classList.add("bubble", "bot");
 
+            // Usar respuestas demo
             botBubble.textContent = jennyDemoResponse(text);
 
             messages.appendChild(botBubble);

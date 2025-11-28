@@ -1,5 +1,4 @@
 <?php
-// MOVER session_start() después de la conexión para evitar warnings
 $host = "dpg-d4jqmmvdiees73b363j0-a.virginia-postgres.render.com";
 $port = "5432";
 $dbname = "planu_0etm";
